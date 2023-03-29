@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generar info de archivos</title>
+	<style>
+		body{
+			background-image: url(fondo.jpg);
+			background-repeat: no-repeat;
+			background-image: fixed;
+			background-position: center center;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		
+		.container{
+			display: felx;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 30%;
+			left: 38%;
+			text-align: center;
+			font-family: Verdana;
+			color: white;
+			border-radius: 10px;
+			width: auto;
+			height: auto;
+			padding: 20px;
+			box-shadow: 0 14px 28px rgb(255, 255, 255), 0 10px 10px rgba(25rgb(255, 255, 255));
+			backdrop-filter: blur(5px);
+			border: 2px solid rgb(255, 255, 255);
+		}
+
+		.container:hover{
+			border-radius: 10px;
+			border: 5px solid rgb(255, 255, 255);
+			filter: drop-shadow(0 0 0.75rem greenyellow);
+		}
+
+		.container h1{
+			color: white;
+			filter: drop-shadow(0 0 1.75rem greenyellow);
+			text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;		
+		}
+
+		img{
+			position: absolute;
+			left: 26%;
+		}
+		label{
+			text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+		}
+		p{
+		color: black;
+		font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<img src="giphy.gif" alt="gif">
+	<div class="container">
+	<form action="ls.php" method="post">
+		<h1>iNFO-ARCHiVO</h1>
+		<label for="ruta">Ruta de directorios:</label><br>
+		<input type="text" id="ruta" name="ruta"><br><br>
+		<input type="submit" value="Generar lista" style="color: rgb(0, 131, 18)">
+	</form>
+<br><button onclick="calcularBenchmark()">Calcular benchmark</button>
+<p id="resultado"></p>
+<script>
+                function calcularBenchmark() {
+                        var inicio = performance.now();
+                        // Aquí puedes colocar el código que deseas evaluar
+                        for (var i = 0; i < 100000000; i++) {
+                                Math.sqrt(i);
+                        }
+                        var fin = performance.now();
+                        var tiempo = fin - inicio;
+                        document.getElementById("resultado").innerHTML = "El benchmark ha tardado " + tiempo + " milisegundos.";
+                }
+        </script>
+
+	</div>
+</body>
+</html>
